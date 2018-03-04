@@ -42,6 +42,9 @@ import java.io.IOException;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import timber.log.Timber;
+
+import static timber.log.Timber.DebugTree;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -74,6 +77,9 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         // TODO (2): Set up Timber
+        if (BuildConfig.DEBUG) {
+            Timber.plant(new DebugTree());
+        }
     }
 
     /**
